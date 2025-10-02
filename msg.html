@@ -1,1 +1,125 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Форма зв'язку</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#ffffff;--accent:#2563eb;--muted:#6b7280}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);margin:0;padding:40px;display:flex;align-items:center;justify-content:center;min-height:100vh}
+    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.08);width:100%;max-width:720px;padding:28px}
+    h1{margin:0 0 8px;font-size:20px}
+    p.lead{margin:0 0 20px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    label{display:block;font-size:13px;margin-bottom:6px;color:#111827}
+    input[type=text],input[type=email],textarea{width:100%;padding:10px 12px;border:1px solid #e6e9ef;border-radius:8px;font-size:14px}
+    input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(37,99,235,0.08)}
+    textarea{min-height:120px;resize:vertical}
+    .actions{display:flex;gap:8px;align-items:center;margin-top:14px}
+    button{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
+    button.secondary{background:transparent;color:var(--accent);border:1px solid #dbeafe}
+    .note{font-size:13px;color:var(--muted)}
+    .full{grid-column:1/-1}
+    .error{border-color:#ef4444}
+    .success-banner{display:none;padding:12px;border-radius:8px;background:#ecfdf5;color:#065f46;margin-bottom:12px}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="card" aria-live="polite">
+    <div id="success" class="success-banner" role="status">Ваше повідомлення надіслано. Дякуємо!</div>
+    <h1>Форма зв'язку</h1>
+    <p class="lead">Залиште ім'я, телефон, e‑mail та повідомлення — ми відповімо якнайшвидше.</p>
 
+    <form id="contactForm" novalidate>
+      <div class="grid">
+        <div>
+          <label for="name">Ім'я <span aria-hidden="true">*</span></label>
+          <input id="name" name="name" type="text" required placeholder="Ім'я та прізвище">
+        </div>
+
+        <div>
+          <label for="phone">Телефон <span aria-hidden="true">*</span></label>
+          <input id="phone" name="phone" type="text" inputmode="tel" required placeholder="+380 67 123 45 67" pattern="^[+0-9()\-\s]{6,}$">
+        </div>
+
+        <div class="full">
+          <label for="email">E‑mail <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com">
+        </div>
+
+        <div class="full">
+          <label for="message">Повідомлення</label>
+          <textarea id="message" name="message" placeholder="Ваше повідомлення..." ></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Відправити</button>
+        <button type="button" class="secondary" id="resetBtn">Очистити</button>
+        <div style="margin-left:auto" class="note">Поля помічені * обов'язкові</div>
+      </div>
+    </form>
+
+    <hr style="margin:18px 0;border:none;border-top:1px solid #eef2ff">
+    <p class="note">Підключення: форма демонстраційна. Можна відправляти на e‑mail через сервер (PHP), або інтегрувати з Formspree / Netlify / Google Sheets. Потрібна допомога з підключенням?</p>
+  </main>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('success');
+    const resetBtn = document.getElementById('resetBtn');
+
+    function validateField(field){
+      if(!field) return true;
+      const valid = field.checkValidity();
+      field.classList.toggle('error', !valid);
+      return valid;
+    }
+
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      // simple validation
+      const name = document.getElementById('name');
+      const phone = document.getElementById('phone');
+      const email = document.getElementById('email');
+
+      let ok = true;
+      [name,phone,email].forEach(f=>{ if(!validateField(f)) ok=false });
+
+      if(!ok){
+        // focus first invalid
+        const firstInvalid = form.querySelector(':invalid');
+        firstInvalid && firstInvalid.focus();
+        return;
+      }
+
+      // Gather data
+      const data = {
+        name: name.value.trim(),
+        phone: phone.value.trim(),
+        email: email.value.trim(),
+        message: document.getElementById('message').value.trim(),
+        sentAt: new Date().toISOString()
+      };
+
+      // Demo: show success banner and log object
+      console.log('Contact form submitted (demo):', data);
+      success.style.display = 'block';
+      form.reset();
+
+      // hide banner after 5s
+      setTimeout(()=>{ success.style.display = 'none' }, 5000);
+
+      // If you have an endpoint, uncomment fetch example below and set `ENDPOINT_URL`.
+      /*
+      fetch('ENDPOINT_URL', {
+        method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data)
+      }).then(r=>r.json()).then(res=>{ console.log(res); }).catch(err=>{ console.error(err); });
+      */
+    });
+
+    resetBtn.addEventListener('click', ()=>{ form.reset(); form.querySelectorAll('.error').forEach(el=>el.classList.remove('error')) });
+  </script>
+</body>
+</html>
