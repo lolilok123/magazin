@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>90-денна програма — Трансформація тіла і розуму</title>
+  <style>
+    :root{--accent:#2b8aef;--bg:#f6f8fb;--card:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Arial;margin:0;background:var(--bg);color:#111}
+    header{background:linear-gradient(90deg,var(--accent),#6ac4ff);color:white;padding:28px 18px}
+    .container{max-width:980px;margin:22px auto;padding:0 18px}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:8px 0 0;color:rgba(255,255,255,0.95)}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    @media (max-width:880px){.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(15,23,42,0.06)}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .pill{background:rgba(43,138,239,0.12);color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
+
+    .phases{display:flex;gap:10px;flex-wrap:wrap}
+    .phase{flex:1 1 calc(33% - 10px);min-width:150px;background:linear-gradient(180deg,#fff,#f8fbff);padding:12px;border-radius:10px}
+    .phase h4{margin:0 0 6px}
+    @media (max-width:600px){.phase{flex-basis:100%}}
+
+    .progress-wrap{display:flex;gap:12px;align-items:center}
+    .progress{flex:1;background:#e6eefc;height:12px;border-radius:999px;overflow:hidden}
+    .progress > i{display:block;height:100%;background:var(--accent);width:0%}
+    .small{font-size:13px;color:var(--muted)}
+
+    ul{padding-left:18px;margin:8px 0}
+    .cta{display:inline-block;background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    .checklist li{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px dashed #eee}
+    .checklist input{width:18px;height:18px}
+
+    footer{margin:26px 0 60px;color:var(--muted);text-align:center}
+
+    /* tiny FAQ */
+    details{margin-bottom:10px}
+    summary{cursor:pointer;font-weight:600}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>90-денна програма — Трансформація тіла & розуму</h1>
+      <p class="lead">Покрокова, гнучка програма: тренування, харчування, вправи для фокусу й відстеження прогресу.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <div>
+        <section class="card">
+          <div class="section-title">
+            <div>
+              <div class="pill">90 днів • 3 фази</div>
+              <h2 style="margin:10px 0 4px">Як це працює</h2>
+            </div>
+            <div class="small">Почніть сьогодні — налаштуйте під себе</div>
+          </div>
+
+          <p>Програма ділиться на три фази по 30 днів кожна. Кожна фаза має фокус: адаптація — сила & витривалість — оптимізація й звички.</p>
+
+          <div class="phases" style="margin-top:12px">
+            <div class="phase">
+              <h4>Фаза 1 (Дні 1–30)</h4>
+              <p class="small">Адаптація — базові вправи, звички сну, щоденна медитація 5 хв.</p>
+            </div>
+            <div class="phase">
+              <h4>Фаза 2 (Дні 31–60)</h4>
+              <p class="small">Прогрес — інтервальні тренування, контроль калорій, техніки концентрації.</p>
+            </div>
+            <div class="phase">
+              <h4>Фаза 3 (Дні 61–90)</h4>
+              <p class="small">Оптимізація — персоналізовані тренування, ментальні ритуали, підтримка звички.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:18px">Щотижневий план</h3>
+          <ul>
+            <li><strong>3 дня</strong> — силові тренування (30–45 хв)</li>
+            <li><strong>2 дня</strong> — кардіо або HIIT (20–30 хв)</li>
+            <li><strong>1 день</strong> — рух/йога/розтяжка</li>
+            <li><strong>1 день</strong> — повний відпочинок</li>
+          </ul>
+
+          <h3 style="margin-top:12px">Ментальна складова</h3>
+          <ul>
+            <li>Щоденна практика вдячності (2–3 речення)</li>
+            <li>Медитація 5–15 хв щодня</li>
+            <li>Техніки фокусування: Pomodoro 25/5</li>
+          </ul>
+
+          <h3 style="margin-top:12px">Харчування</h3>
+          <p class="small">Прості правила: білок при кожному прийомі їжі, контроль порцій, мінімум перероблених продуктів, достатня гідратація.</p>
+
+        </section>
+
+        <section class="card" style="margin-top:18px">
+          <div class="section-title"><h3>Щоденний чек-лист</h3><div class="small">Маркуйте виконане — зберігається в браузері</div></div>
+          <ul class="checklist" id="checklist">
+            <li><input type="checkbox" data-id="sleep"> Сон 7–8 год</li>
+            <li><input type="checkbox" data-id="workout"> Тренування</li>
+            <li><input type="checkbox" data-id="water"> Випито 2+ л води</li>
+            <li><input type="checkbox" data-id="meditation"> Медитація</li>
+            <li><input type="checkbox" data-id="protein"> Білок при їжі</li>
+          </ul>
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <button id="saveBtn" class="cta">Зберегти день</button>
+            <button id="clearBtn" style="background:#eee;border-radius:10px;padding:10px 12px;border:0">Очистити</button>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:18px">
+          <h3>FAQ</h3>
+          <details>
+            <summary>Чи потрібно купувати багато обладнання?</summary>
+            <p class="small">Ні. Програма працює з власною вагою, базовим гантельним набором або еспандерами. Є варіанти без обладнання.</p>
+          </details>
+          <details>
+            <summary>Як адаптувати інтенсивність?</summary>
+            <p class="small">Збільшуйте або зменшуйте повторення/час. Слухайте тіло і прогресуйте поступово.</p>
+          </details>
+        </section>
+
+      </div>
+
+      <aside>
+        <div class="card">
+          <div class="section-title"><h3>Прогрес</h3><div class="small">День: <span id="dayCount">0</span>/90</div></div>
+          <div class="progress-wrap">
+            <div class="progress" aria-hidden><i id="progBar"></i></div>
+            <div class="small" id="percent">0%</div>
+          </div>
+
+          <h4 style="margin-top:14px">Щотижневий фокус</h4>
+          <ul>
+            <li class="small">Тиждень 1–2: привчання</li>
+            <li class="small">Тиждень 3–6: нарощування об'єму</li>
+            <li class="small">Тиждень 7–12: інтенсивність та ритуали</li>
+          </ul>
+
+          <div style="margin-top:12px">
+            <a class="cta" id="nextDay">Позначити ще 1 день ✅</a>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Ресурси</h3>
+          <ul>
+            <li class="small">Таймер Pomodoro</li>
+            <li class="small">Шаблон харчування</li>
+            <li class="small">Список вправ з відео-поясненнями</li>
+          </ul>
+          <p class="small">Потрібна допомога? Напиши мені на пошту: example@youremail.com</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <p>© 2025 90-денна програма — почни трансформацію сьогодні. Налаштуй під себе або попроси персоналізацію.</p>
+    </footer>
+  </main>
+
+  <script>
+    // Простий локальний прогрес і чек-лист
+    const dayKey = 'program_day_count_v1';
+    const checklistKey = 'program_checklist_v1';
+    const dayCountEl = document.getElementById('dayCount');
+    const progBar = document.getElementById('progBar');
+    const percentEl = document.getElementById('percent');
+
+    function loadState(){
+      const days = parseInt(localStorage.getItem(dayKey)||'0',10);
+      const checklist = JSON.parse(localStorage.getItem(checklistKey)||'{}');
+      dayCountEl.textContent = days;
+      const pct = Math.round((days/90)*100);
+      progBar.style.width = pct + '%';
+      percentEl.textContent = pct + '%';
+
+      document.querySelectorAll('#checklist input').forEach(cb=>{
+        const id = cb.dataset.id;
+        cb.checked = !!checklist[id];
+      })
+    }
+
+    document.getElementById('nextDay').addEventListener('click',()=>{
+      let days = parseInt(localStorage.getItem(dayKey)||'0',10);
+      if(days<90) days++;
+      localStorage.setItem(dayKey, days);
+      loadState();
+    });
+
+    document.getElementById('saveBtn').addEventListener('click',()=>{
+      const obj = {};
+      document.querySelectorAll('#checklist input').forEach(cb=> obj[cb.dataset.id]=cb.checked);
+      localStorage.setItem(checklistKey, JSON.stringify(obj));
+      alert('День збережено локально в браузері.');
+    })
+    document.getElementById('clearBtn').addEventListener('click',()=>{
+      document.querySelectorAll('#checklist input').forEach(cb=> cb.checked=false);
+      localStorage.removeItem(checklistKey);
+    })
+
+    // init
+    loadState();
+  </script>
+</body>
+</html>
