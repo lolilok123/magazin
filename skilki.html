@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вартість пакетів</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(180deg, #4A90E2 0%, #6AA9F4 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+    header h1 {margin: 0; font-size: 36px; font-weight: 700;}
+    header p {margin-top: 10px; font-size: 18px; opacity: 0.9;}
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 50px 20px;
+    }
+    .card {
+      background-color: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 30px 40px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    .card h2 {color: #4A90E2; margin-bottom: 10px; font-size: 24px;}
+    .price {font-size: 32px; font-weight: bold; color: #222; margin-bottom: 15px;}
+    .card ul {list-style: none; padding: 0; margin: 0 0 20px; line-height: 1.6; color: #555;}
+    .button {
+      background-color: #4A90E2;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      display: inline-block;
+    }
+    .button:hover {background-color: #3578d4;}
+    footer {text-align: center; padding: 20px; color: #666; font-size: 14px;}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Вартість пакетів</h1>
+    <p>Оберіть найкращий варіант для себе</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Базовий</h2>
+      <div class="price">200 грн</div>
+      <ul>
+        <li>Основний доступ</li>
+        <li>1 день підтримки</li>
+        <li>Базові можливості</li>
+      </ul>
+      <a href="order.html?package=Базовий" class="button">Обрати</a>
+    </div>
+
+    <div class="card">
+      <h2>Стандарт</h2>
+      <div class="price">300 грн</div>
+      <ul>
+        <li>Розширений доступ</li>
+        <li>3 дні підтримки</li>
+        <li>Додаткові опції</li>
+      </ul>
+      <a href="order.html?package=Стандарт" class="button">Обрати</a>
+    </div>
+
+    <div class="card">
+      <h2>Преміум</h2>
+      <div class="price">400 грн</div>
+      <ul>
+        <li>Повний доступ</li>
+        <li>7 днів підтримки</li>
+        <li>Усі можливості системи</li>
+      </ul>
+      <a href="order.html?package=Преміум" class="button">Обрати</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Ваша компанія. Усі права захищено.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма замовлення</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(180deg, #4A90E2 0%, #6AA9F4 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      padding: 50px 20px;
+    }
+
+    form {
+      background-color: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 30px 40px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #4A90E2;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #3578d4;
+    }
+
+    a.back {
+      display: inline-block;
+      margin-top: 20px;
+      color: #4A90E2;
+      text-decoration: none;
+    }
+
+    a.back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Форма замовлення</h1>
+    <p>Заповніть дані нижче, щоб оформити замовлення</p>
+  </header>
+
+  <main>
+    <form action="#" method="post">
+      <label for="name">Ваше ім’я</label>
+      <input type="text" id="name" name="name" placeholder="Введіть ім’я" required>
+
+      <label for="contact">Телефон або Email</label>
+      <input type="text" id="contact" name="contact" placeholder="Ваш контакт" required>
+
+      <label for="package">Оберіть пакет</label>
+      <select id="package" name="package" required>
+        <option value="">-- Оберіть пакет --</option>
+        <option value="Базовий">Базовий — 200 грн</option>
+        <option value="Стандартний">Стандарт — 300 грн</option>
+        <option value="Преміум">Преміум — 400 грн</option>
+      </select>
+
+      <label for="message">Коментар</label>
+      <textarea id="message" name="message" rows="4" placeholder="Ваші побажання..."></textarea>
+
+      <button type="submit">Надіслати замовлення</button>
+      <br>
+      <a href="index.html" class="back">← Повернутися до вибору пакетів</a>
+    </form>
+  </main>
+
+</body>
+</html>
