@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ваші результати — наш пріоритет</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    header {
+        text-align: center;
+        padding: 100px 20px 60px 20px;
+    }
+    header h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        color: #ffffff;
+    }
+    header p {
+        font-size: 1.2em;
+        color: #b0b0ff;
+    }
+    main {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 40px 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .feature {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 25px;
+        border-radius: 15px;
+        flex: 1 1 250px;
+        min-width: 250px;
+        transition: transform 0.3s, background 0.3s;
+    }
+    .feature:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.1);
+    }
+    .feature h2 {
+        margin-bottom: 10px;
+        color: #a0a0ff;
+    }
+    .feature p {
+        color: #d0d0ff;
+    }
+    .cta {
+        text-align: center;
+        margin: 40px 0;
+    }
+    .cta button {
+        padding: 15px 35px;
+        font-size: 1.1em;
+        border: none;
+        border-radius: 50px;
+        background: #6c63ff;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .cta button:hover {
+        background: #5751d0;
+    }
+    footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9em;
+        color: #8888ff;
+        background: rgba(0,0,0,0.2);
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Ваші результати — наш головний пріоритет!</h1>
+    <p>Ми допомагаємо досягати цілей швидко та ефективно.</p>
+</header>
+<main>
+    <div class="feature">
+        <h2>Індивідуальний підхід</h2>
+        <p>Персональні рішення для кожного клієнта, адаптовані під ваші потреби.</p>
+    </div>
+    <div class="feature">
+        <h2>Професійна команда</h2>
+        <p>Наші експерти завжди готові підтримати та проконсультувати.</p>
+    </div>
+    <div class="feature">
+        <h2>Гарантія якості</h2>
+        <p>Високі стандарти роботи забезпечують максимальні результати.</p>
+    </div>
+</main>
+<footer>
+    &copy; 2025 Ваші Результати. Всі права захищено.
+</footer>
+</body>
+</html>
